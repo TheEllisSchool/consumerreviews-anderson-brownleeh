@@ -5,7 +5,7 @@ public class APCSAConsumerReview {
 		//double value = Review.sentimentVal("useful");
 		//System.out.println(value);
 		
-		double total = Review.totalSentiment("src/SimpleReview.txt");
+		double total = Review.totalSentiment("src/SimpleReviewWithout*.txt");
 		System.out.println("Total Sentiment: " + total);
 		
 		//double stars = Review.starRating("src/SimpleReview.txt");

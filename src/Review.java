@@ -213,15 +213,15 @@ public class Review {
 	 for (int i=0; i<words.length; i++) {
 		 if(words[i].charAt(0) == '*') {
 			 int length = words[i].length();
-			 double sentiment = Review.totalSentiment("src/SimpleReview.txt");
+			 double sentimentVal = Review.totalSentiment("src/SimpleReviewWithout*.txt");
 			 
-			 if (sentiment>=0) {// if review is positive, make negative
+			 if (sentimentVal>=0) {// if review is positive, make negative
 			 	if(words[i].charAt(length-1)== ',') {
 			 		words[i] = randomNegativeAdj() + ",";
 			 	}	else {
 				 	words [i] = randomNegativeAdj();
 			 	}
-			 }else if (sentiment<0){
+			 }else if (sentimentVal<0){
 			 	if(words[i].charAt(length-1)== ',') {
 			 		words[i] = randomPositiveAdj() + ",";
 			 	}else {
@@ -238,6 +238,7 @@ public class Review {
 	 for (int i = 0; i < words.length; i++) {
 		 review += words[i] + " ";
 	 }
+	 //System.out.println(sentimentVal);
 	 return review;
  }
   
